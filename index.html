@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +85,7 @@
   <section>
     <h2>Prompt & Plan Your Competence</h2>
     <textarea class="planner-input" placeholder="E.g. I need 24 hours. Interested in bookkeeping and valuation. Prefer live or podcast."></textarea>
-    <button class="generate-button" onclick="generatePlan()">Generate Plan</button>
+    <button class="generate-button" id="generatePlanBtn">Generate Plan</button>
     <div class="course-suggestions"></div>
   </section>
 
@@ -102,66 +101,11 @@
 
       <label for="total-hours">Total Hours to Allocate:</label>
       <input id="total-hours" type="number" value="10"/>
-      <button class="generate-button" onclick="generateTeamPlan()">Generate Team Plan</button>
+      <button class="generate-button">Generate Team Plan</button>
     </div>
     <div class="team-suggestions"></div>
   </section>
 
-  <script>
-    const mockCourses = [
-      {
-        title: "Bookkeeping: Advanced Rules & Pitfalls",
-        description: "A deep dive into Norwegian bookkeeping regulations with real-world cases.",
-        tags: ["Bookkeeping", "Advanced", "Live"],
-        hours: 2.5,
-        date: "04 Dec 2025"
-      },
-      {
-        title: "Valuation & Analysis Essentials",
-        description: "Learn methods of valuation and financial analysis used in audits.",
-        tags: ["Valuation", "Finance", "Podcast"],
-        hours: 2,
-        date: "12 Jan 2026"
-      },
-      {
-        title: "Holiday Pay Law for Payroll Officers",
-        description: "Understand the core principles of the Holiday Pay Act in payroll.",
-        tags: ["Payroll", "Law", "eLearning"],
-        hours: 1.5,
-        date: "19 Feb 2026"
-      },
-    ];
-
-    function renderCourses(container, courses) {
-      container.innerHTML = "";
-      courses.forEach(course => {
-        const card = document.createElement("div");
-        card.className = "course-card";
-        card.innerHTML = `
-          <h3>${course.title}</h3>
-          <p>${course.description}</p>
-          <div class="tags">${course.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}</div>
-          <div class="course-meta">${course.hours} CE hours • ${course.date}</div>
-          <div class="actions">
-            <button>Add to My Plan</button>
-            <button>Sync to Calendar</button>
-            <a href="#">View Details</a>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    function generatePlan() {
-      const container = document.querySelector(".course-suggestions");
-      renderCourses(container, mockCourses.slice(0, 2));
-    }
-
-    function generateTeamPlan() {
-      const container = document.querySelector(".team-suggestions");
-      renderCourses(container, mockCourses.slice(1, 3));
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
