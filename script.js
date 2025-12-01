@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const accessToken = 'b2dc78e43f70e4d0ba17d51ecceeac7f81744819'; // Use your valid token here
+  const accessToken = '107efaea498175869284e977ba14c404466d3e06'; // Use your valid token here
   const apiUrl = 'https://sticossandbox.docebosaas.com/learn/v1/courses';
   const generateBtn = document.getElementById('generatePlanBtn');
   const suggestionsContainer = document.querySelector('.course-suggestions');
